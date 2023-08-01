@@ -8,3 +8,7 @@
 # ver 1.0 still under development to get it to work
 
 #note to use the sliver.php and the celeanger server app
+
+After the Dockerfile is built using the $podman build -t icloud-unlock:unlock .
+
+run $podman run -it --privileged -v /dev/bus/usb/001:/dev/bus/usb/001 --net=host 55b4bde1184c
