@@ -18,4 +18,4 @@ RUN ldconfig
 
 #EOF
 # ENTRYPOINT ["/usr/local/bin"]
-
+# try also ideviceactivation activate -s icell.gearhostpreview.com/sliver.php -d
