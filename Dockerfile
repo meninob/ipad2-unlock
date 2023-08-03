@@ -3,11 +3,13 @@ FROM ubuntu:jammy
 RUN apt-get update
 RUN apt install -y software-properties-common
 # to get apt-repository to work
-RUN add-apt-repository ppa:quamotion/ppa && \
+RUN apt-get update
+RUN add-apt-repository ppa:quamotion/ppa 
+RUN apt-get update && \
     apt install -y  libimobiledevice6 libimobiledevice-utils usbutils libimobiledevice-dev autoconf automake pkg-config bash build-essential libusbmuxd-tools && \
-    libplist++-dev libplist-utils libplist++3v5 libplist-doc libgdiplus ideviceinstaller ifuse hfsutils mtp-tools gmtp jmtpfs go-mtpfs usbmuxd && \
-    tmux git usbmuxd python3 wget libxml2-dev libcurl4-openssl-dev checkinstall libtool-bin libplist-dev
-
+    libplist-utils libplist++3v5 libplist-doc libgdiplus ideviceinstaller ifuse hfsutils mtp-tools gmtp jmtpfs go-mtpfs usbmuxd && \
+    tmux git python3 wget libxml2-dev libcurl4-openssl-dev checkinstall libtool-bin libplist-dev
+#libplist++-dev
 #RUN apt-get update -y && \
 #    apt-get install -y bash usbmuxd build-essential pkg-config checkinstall git autoconf automake libtool-bin libplist-dev libimobiledevice-dev \
 #       libxml2-dev \
