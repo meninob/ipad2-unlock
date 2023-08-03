@@ -4,7 +4,7 @@ RUN mkdir /var/lib/usbmux && \
     useradd -m -d /var/lib/usbmux -g sudo plugdev
 RUN echo "deb http://ppa.launchpad.net/quamotion/ppa/ubuntu bionic main" > /etc/apt/sources.list.d/quamotion-ubuntu-ppa-bionic.list && \
     echo " # deb-src http://ppa.launchpad.net/quamotion/ppa/ubuntu bionic main" >> /etc/apt/sources.list.d/quamotion-ubuntu-ppa-bionic.list
-
+# try this  - sudo add-apt-repository ppa:pmcenery/ppa
 RUN apt-get update && \
     apt install -y software-properties-common && \
 
