@@ -1,0 +1,37 @@
+FROM ubuntu:jammy
+
+RUN mkdir /var/lib/usbmux && \
+    useradd -m -d /var/lib/usbmux -g sudo plugdev
+RUN echo "deb http://ppa.launchpad.net/quamotion/ppa/ubuntu bionic main" > /etc/apt/sources.list.d/quamotion-ubuntu-ppa-bionic.list && \
+    echo " # deb-src http://ppa.launchpad.net/quamotion/ppa/ubuntu bionic main" >> /etc/apt/sources.list.d/quamotion-ubuntu-ppa-bionic.list
+
+RUN apt-get update && \
+    apt install -y software-properties-common && \
+
+# to get apt-repository to work
+    apt-get update && \
+    apt install -y  libimobiledevice6 libimobiledevice-utils usbutils libimobiledevice-dev autoconf automake pkg-config bash build-essential libusbmuxd-tools && \
+    usbmuxd libplist++3v5 ifuse ideviceinstaller go-mtpfs libplist-doc libgdiplus hfsutils gmtp jmtpfs && \
+    tmux git python3 wget libxml2-dev libcurl4-openssl-dev checkinstall libtool-bin libplist-dev libplist-utils && \
+
+RUN echo "SUBSYSTEM=="usb", ATTRS{idVendor}=="05ac", ATTRS{idProduct}=="12a9", MODE="0666", GROUP="plugdev"" > /etc/udev/rules.d/ipad.rules && \
+    sudo udevadm control --reload-rules
+
+   git clone https://github.com/libimobiledevice/libideviceactivation.git && \
+    cd libideviceactivation && \
+    ./autogen.sh --prefix=/opt/local && \
+    make && \
+    make install && \
+    cd /~ && \
+    git clone https://github.com/libimobiledevice/libimobiledevice-glue.git && \
+    cd libimobiledevice-glue && \
+    ./autogen.sh --prefix=/opt/local && \
+    make && \
+    make install
+#    ldconfig
+
+#EXPOSE 80
+
+# ENTRYPOINT ["/usr/local/bin"]
+
+# to fix the dependency of the path - ref https://github.com/libimobiledevice/libimobiledevice/issues/31
