@@ -13,3 +13,7 @@
 After the Dockerfile is built using the $podman build -t icloud-unlock:unlock .
 
 run $podman run -it --privileged -v /dev/bus/usb/001:/dev/bus/usb/001 --net=host 55b4bde1184c
+use for reference - docker run -it -v /var/run:/var/run --entrypoint=/bin/bash debian:unstable-slim
+
+
+reference old one = $podman run -it --privileged -v /dev/bus/usb/001:/dev/bus/usb/001 --net=host 55b4bde1184c
