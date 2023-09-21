@@ -7,7 +7,7 @@
 
 # remember to use ldconfig, which is in the file, to address errors when running ideviceactivation, after initial installation. This is probably because of configuration files not in the right path.
 
-# ver 1.0 still under development to get it to work
+# ver .try4 still under development to get it to work. but got it to work manually. trying to automate it through dockerfile.try4. Will confirm soon after testing
 
 #note to use the sliver.php and the celeanger server app
 
