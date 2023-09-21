@@ -4,14 +4,14 @@ RUN apt update && apt install -y usbmuxd libimobiledevice6 libimobiledevice-uti>
 RUN echo "idevicepair pair"
 #RUN usbmuxd
 RUN apt-get install -y build-essential pkg-config checkinstall git autoconf aut>
-RUN git clone https://github.com/libimobiledevice/libideviceactivation.git
-RUN cd libideviceactivation
-RUN ./autogen.sh
-RUN make
-RUN make install
-RUN cd tools
-RUN ldconfig -v |& grep mobile
-RUN ideviceactivation state
-#CMD ["usbmuxd", "-d"]
-#RUN echo "ideviceactivation activate -s cengdealajr.gearhostpreview.com/sliver>
+CMD git clone https://github.com/libimobiledevice/libideviceactivation.git
+CMD cd libideviceactivation
+CMD ./autogen.sh
+CMD make
+CMD make install
+CMD cd tools
+CMD ["ldconfig", "-v","|& grep mobile"]
+CMD ["ideviceactivation","state"]
+CMD ["usbmuxd", "-d"]
+CMD ["ideviceactivation activate -s cengdealajr.gearhostpreview.com/sliver.php >
 
