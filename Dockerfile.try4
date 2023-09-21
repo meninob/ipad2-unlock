@@ -1,1 +1,3 @@
+FROM debian:unstable-slim
 
+RUN apt update && apt install -y usbmuxd libimobiledevice6 libimobiledevice-utils libavahi-compat-libdnssd-dev curl wget procps usbutils lsof tmux
