@@ -1,9 +1,9 @@
 FROM debian:unstable-slim
 
-RUN apt update && apt install -y usbmuxd libimobiledevice6 libimobiledevice-utils libavahi-compat-libdnssd-dev curl wget procps usbutils lsof tmux
-RUN idevicepair pair
-RUN usbmuxd
-RUN apt-get install 	build-essential 	pkg-config 	checkinstall 	git 	autoconf 	automake 	libtool-bin 	libplist-dev 	libimobiledevice-dev 	libxml2-dev 	libcurl4-openssl-dev 	usbmuxd
+RUN apt update && apt install -y usbmuxd libimobiledevice6 libimobiledevice-uti>
+RUN echo "idevicepair pair"
+#RUN usbmuxd
+RUN apt-get install -y build-essential pkg-config checkinstall git autoconf aut>
 RUN git clone https://github.com/libimobiledevice/libideviceactivation.git
 RUN cd libideviceactivation
 RUN ./autogen.sh
@@ -12,4 +12,6 @@ RUN make install
 RUN cd tools
 RUN ldconfig -v |& grep mobile
 RUN ideviceactivation state
-RUN ideviceactivation activate -s cengdealajr.gearhostpreview.com/sliver.php -d
+#CMD ["usbmuxd", "-d"]
+#RUN echo "ideviceactivation activate -s cengdealajr.gearhostpreview.com/sliver>
+
