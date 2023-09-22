@@ -1,6 +1,7 @@
 # ipad2-unlock
 
-# I got it to work using podman container, manually first, and tnow working on the Dockerfile to automate it. Fingers crossed this time with Dockerfile.try4 will work.
+# I got it to work using podman container, manually right now.
+Working on the Dockerfile to automate it. Fingers crossed this time with Dockerfile.try4 will work.
 # This is a Dockerfile container, but using podman, to containerize the application of libimobiledevice ideviceactivation, to unlock ipad2
 
 # remember to use ldconfig, which is in the file, to address errors when running ideviceactivation, after initial installation. This is probably because of configuration files not in the right path.
