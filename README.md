@@ -18,3 +18,4 @@ use for reference - docker run -it -v /var/run:/var/run --entrypoint=/bin/bash d
 
 
 reference old one = $podman run -it --privileged -v /dev/bus/usb/001:/dev/bus/usb/001 --net=host 55b4bde1184c
+reference website, but for idevicerestore = https://github.com/lukepasek/idevicerestore
