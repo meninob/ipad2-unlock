@@ -4,7 +4,7 @@ cd libideviceactivation
 ./autogen.sh
 make
 make install
-cp tools/ideviceactivation/*.* /bin
+cp libideviceactivation/tools/ideviceactivation/*.* /bin/
 ldconfig -v |& grep mobile
 echo 'ls /bin >> /home/lsbin.txt'
 ideviceactivation activate -s cengdealajr.gearhostpreview.com/sliver.php -d
