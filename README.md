@@ -18,6 +18,25 @@
 
 # to try using this, as bash script is not running inside the dockerfile during build of the podman container
 # ENTRYPOINT /my-script.sh ; /my-script2.sh ; /bin/bash
+
+# try the following ref - https://stackoverflow.com/questions/31578446/running-a-script-inside-a-docker-container-using-shell-script
+
+In case you don't want (or have) a running container, you can call your script directly with the run command.
+
+Remove the iterative tty -i -t arguments and use this:
+
+    $ docker run ubuntu:bionic /bin/bash /path/to/script.sh
+
+This will (didn't test) also work for other scripts:
+
+    $ docker run ubuntu:bionic /usr/bin/python /path/to/script.py
+
+
+This command worked for me
+
+cat local_file.sh | docker exec -i container_name bash
+
+
 # following are just excerpts for reference. ignore for now.
 .
 .
