@@ -14,8 +14,10 @@
 
 #After the Dockerfile is built using the $podman build -t icloud-unlock:unlock .
 
-# creation of container is $odman run -it -v /var/run:/var/run --entrypoint=/bin/bash icloud-unlock:latest
+# creation of container is $podman run -it -v /var/run:/var/run --entrypoint=/bin/bash icloud-unlock:latest
 
+# to try using this, as bash script is not running inside the dockerfile during build of the podman container
+# ENTRYPOINT /my-script.sh ; /my-script2.sh ; /bin/bash
 # following are just excerpts for reference. ignore for now.
 .
 .
