@@ -21,20 +21,7 @@
 
 # try the following ref - https://stackoverflow.com/questions/31578446/running-a-script-inside-a-docker-container-using-shell-script
 
-In case you don't want (or have) a running container, you can call your script directly with the run command.
 
-Remove the iterative tty -i -t arguments and use this:
-
-    $ docker run ubuntu:bionic /bin/bash /path/to/script.sh
-
-This will (didn't test) also work for other scripts:
-
-    $ docker run ubuntu:bionic /usr/bin/python /path/to/script.py
-
-
-This command worked for me
-
-cat local_file.sh | docker exec -i container_name bash
 
 
 # following are just excerpts for reference. ignore for now.
@@ -46,7 +33,7 @@ cat local_file.sh | docker exec -i container_name bash
 
 run $podman run -it --privileged -v /dev/bus/usb/001:/dev/bus/usb/001 --net=host 55b4bde1184c
 use for reference - docker run -it -v /var/run:/var/run --entrypoint=/bin/bash debian:unstable-slim
-
+they key here is /var/run:/var/run, as anything else, even /dev/bus/usb does not work not even /var. I think the /var/run has the required libraries associated with the ipad device to connect to the container properly. I need to figure this out.
 
 reference old one = $podman run -it --privileged -v /dev/bus/usb/001:/dev/bus/usb/001 --net=host 55b4bde1184c
 reference website, but for idevicerestore = https://github.com/lukepasek/idevicerestore
