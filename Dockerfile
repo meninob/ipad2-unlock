@@ -8,4 +8,4 @@ libimobiledevice-dev libxml2-dev libcurl4-openssl-dev
 ENTRYPOINT /home/inst_icu.sh; /bin/bash
 #run the following to build and create the icloud unlock container
 # $ podman build --no-cache=true -t unicloud1 .     
-# $ podman run -it --privileged -v /dev/bus/usb/001:/dev/bus/usb/001 --net=host unicloud1:latest 
+# $ podman run -it --privileged -v /var/run:/var/run --net=host unicloud1:latest 
