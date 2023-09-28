@@ -14,7 +14,7 @@
 
 #After the Dockerfile is built using the $podman build -t icloud-unlock:unlock .
 
-# creation of container is $podman run -it -v /var/run:/var/run --entrypoint=/bin/bash icloud-unlock:latest
+# found out only lately that using the local /var/run works, becaus eit uses the usbmuxd service locally from the host. Now have found a way to use usbmuxd from within the container, using usbmuxd -v or -s in a tmux session. but if ipad is reconnected, it requires usbmuxd to be restarted. trying to find a way to make ipad redectable. tried to map /dev/bus/usb, but ipad uses a different bus after reconnecting.{creation of container is $podman run -it -v /var/run:/var/run --entrypoint=/bin/bash icloud-unlock:latest}
 
 # to try using this, as bash script is not running inside the dockerfile during build of the podman container
 # ENTRYPOINT /my-script.sh ; /my-script2.sh ; /bin/bash
