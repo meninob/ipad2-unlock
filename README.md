@@ -23,7 +23,7 @@
 
 
 
-
+note - usbmuxd uses TCP port 27015
 # following are just excerpts for reference. ignore for now.
 .
 .
