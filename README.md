@@ -2,7 +2,7 @@
 
 # This is the software using the libimobiledevice - ideviceactivation to activate an icloud locked ipad2.
 # This works in windows and linux, but this code is mainly for a linux debian slim container. I did try alpine and ubuntu, but some of the apt installs / apk installs did not work. Will try it on manjaro, then fedora ws38 and confirm, when time permits.
-# I got it to work using podman container, using a localized script that I copy to do the task.
+NOTE: I got it to work using podman container, using a localized script that I copy to do the task.
 # After the local script is copied, it runs the required apt installs, goes into the libimobiledevice git repo, compiles the executables, and then runs it, to unlock the ipad device, if connected.
 
 # it also uses the ldconfig, which is in the script inst_icu.sh file, to address errors when running ideviceactivation, after initial installation. This is probably because of configuration files not in the right path.
