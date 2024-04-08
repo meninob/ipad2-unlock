@@ -8,9 +8,9 @@ NOTE: I got it to work using podman container, using a localized script that I c
 # it also uses the ldconfig, which is in the script inst_icu.sh file, to address errors when running ideviceactivation, after initial installation. This is probably because of configuration files not in the right path.
 
 # tried to get it working in an Acer Chromebook R16 I think, but it did not work, even after ensuring that the ipad device is allocated to the linux subsystem
-# also note that if running the unlock script over internet, using a vodafone network, it will be blocked by vodafone
+NOTE: If running the unlock script over internet, using a vodafone network, it will be blocked by vodafone
 
-#note to use the sliver.php and the celeanger server app
+NOTE: to use the sliver.php and the celeanger server app
 
 #After the Dockerfile is built using the $podman build -t icloud-unlock:unlock .
 
@@ -23,7 +23,7 @@ NOTE: I got it to work using podman container, using a localized script that I c
 
 
 
-note - usbmuxd uses TCP port 27015
+NOTE: usbmuxd uses TCP port 27015
 # following are just excerpts for reference. ignore for now.
 .
 .
