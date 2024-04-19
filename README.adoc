@@ -1,8 +1,8 @@
-# ipad2-unlock
+# ipad2-unlock Containerized
 
 :toc:
 
-==Introduction
+== Introduction
 ***This is the software using the libimobiledevice - ideviceactivation to activate an icloud locked ipad2.
 This works in windows and linux, but this code is mainly for a linux debian slim container. I did try alpine and ubuntu, but some of the apt installs / apk installs did not work. Will try it on manjaro, then fedora ws38 and confirm, when time permits.***
 NOTE: I got it to work using podman container, using a localized script that I copy to do the task.
@@ -14,7 +14,9 @@ NOTE: If running the unlock script over internet, using a vodafone network, it w
 
 NOTE: to use the sliver.php and the celeanger server app
 
-==Dockerfile
+== Dockerfile
+Copy the Dockerfile and inst_icu.sh to any folder, but modify the Dockerfile, to ensure WORKDIR reflects where where the Dockerfile and inst_icu.sh file will be.
+
 After the Dockerfile is built using the $podman build -t icloud-unlock:unlock .
 
 ==finds
