@@ -1,30 +1,35 @@
 # ipad2-unlock
 
-# This is the software using the libimobiledevice - ideviceactivation to activate an icloud locked ipad2.
-# This works in windows and linux, but this code is mainly for a linux debian slim container. I did try alpine and ubuntu, but some of the apt installs / apk installs did not work. Will try it on manjaro, then fedora ws38 and confirm, when time permits.
+:toc:
+
+==Introduction
+***This is the software using the libimobiledevice - ideviceactivation to activate an icloud locked ipad2.
+This works in windows and linux, but this code is mainly for a linux debian slim container. I did try alpine and ubuntu, but some of the apt installs / apk installs did not work. Will try it on manjaro, then fedora ws38 and confirm, when time permits.***
 NOTE: I got it to work using podman container, using a localized script that I copy to do the task.
-# After the local script is copied, it runs the required apt installs, goes into the libimobiledevice git repo, compiles the executables, and then runs it, to unlock the ipad device, if connected.
+After the local script is copied, it runs the required apt installs, goes into the libimobiledevice git repo, compiles the executables, and then runs it, to unlock the ipad device, if connected.
+it also uses the ldconfig, which is in the script inst_icu.sh file, to address errors when running ideviceactivation, after initial installation. This is probably because of configuration files not in the right path.
 
-# it also uses the ldconfig, which is in the script inst_icu.sh file, to address errors when running ideviceactivation, after initial installation. This is probably because of configuration files not in the right path.
-
-# tried to get it working in an Acer Chromebook R16 I think, but it did not work, even after ensuring that the ipad device is allocated to the linux subsystem
+NOTE: tried to get it working in an Acer Chromebook R16 I think, but it did not work, even after ensuring that the ipad device is allocated to the linux subsystem
 NOTE: If running the unlock script over internet, using a vodafone network, it will be blocked by vodafone
 
 NOTE: to use the sliver.php and the celeanger server app
 
-#After the Dockerfile is built using the $podman build -t icloud-unlock:unlock .
+==Dockerfile
+After the Dockerfile is built using the $podman build -t icloud-unlock:unlock .
 
-# found out only lately that using the local /var/run works, becaus eit uses the usbmuxd service locally from the host. Now have found a way to use usbmuxd from within the container, using usbmuxd -v or -s in a tmux session. but if ipad is reconnected, it requires usbmuxd to be restarted. trying to find a way to make ipad redectable. tried to map /dev/bus/usb, but ipad uses a different bus after reconnecting.{creation of container is $podman run -it -v /var/run:/var/run --entrypoint=/bin/bash icloud-unlock:latest}
+==finds
+ found out only lately that using the local /var/run works, becaus eit uses the usbmuxd service locally from the host. Now have found a way to use usbmuxd from within the container, using usbmuxd -v or -s in a tmux session. but if ipad is reconnected, it requires usbmuxd to be restarted. trying to find a way to make ipad redectable. tried to map /dev/bus/usb, but ipad uses a different bus after reconnecting.{creation of container is $podman run -it -v /var/run:/var/run --entrypoint=/bin/bash icloud-unlock:latest}
 
-# to try using this, as bash script is not running inside the dockerfile during build of the podman container
-# ENTRYPOINT /my-script.sh ; /my-script2.sh ; /bin/bash
+to try using this, as bash script is not running inside the dockerfile during build of the podman container
+ENTRYPOINT /my-script.sh ; /my-script2.sh ; /bin/bash
 
-# try the following ref - https://stackoverflow.com/questions/31578446/running-a-script-inside-a-docker-container-using-shell-script
+try the following ref - https://stackoverflow.com/questions/31578446/running-a-script-inside-a-docker-container-using-shell-script
 
 
 
 NOTE: usbmuxd uses TCP port 27015
-# following are just excerpts for reference. ignore for now.
+==addendum
+ following are just excerpts for reference. ignore for now.
 .
 .
 .
