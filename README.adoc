@@ -28,6 +28,7 @@ try the following ref - https://stackoverflow.com/questions/31578446/running-a-s
 
 
 NOTE: usbmuxd uses TCP port 27015
+
 ==addendum
  following are just excerpts for reference. ignore for now.
 .
