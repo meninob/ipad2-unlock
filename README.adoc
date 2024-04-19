@@ -15,8 +15,6 @@ NOTE: If running the unlock script over internet, using a vodafone network, it w
 NOTE: to use the sliver.php and the celeanger server app
 
 == Dockerfile
-Copy the Dockerfile and inst_icu.sh to any folder, but modify the Dockerfile, to ensure WORKDIR reflects where where the Dockerfile and inst_icu.sh file will be.
-
 After the Dockerfile is built using the $podman build -t icloud-unlock:unlock .
 
 ==finds
