@@ -13,6 +13,7 @@ it also uses the ldconfig, which is in the script inst_icu.sh file, to address e
 
 **Instructions**
 
+Install apt and 
 download inst_icu.sh and unicloud.sh and chmod 777 both these files; Also download the Dockerfile (obviously!)
 Then run
 
