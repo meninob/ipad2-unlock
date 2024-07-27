@@ -13,7 +13,9 @@ it also uses the ldconfig, which is in the script inst_icu.sh file, to address e
 
 **Instructions**
 
-== Dockerfile
+download inst_icu.sh and unicloud.sh and chmod 777 both these files; Also download the Dockerfile (obviously!)
+Then run
+
   $podman build -t icloud-unlock:unlock .
 
 
