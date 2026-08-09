@@ -1,0 +1,1 @@
+libimdevice\ideviceactivation activate -s https://github.com/MiUnlockCode/MiUnlock/blob/main/activator.php -d
