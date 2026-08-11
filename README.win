@@ -1,8 +1,8 @@
 unlock directly from windows
 Pre-requiusites -
--- 1. install ipad drivers (bonjour, and ipad drivers)
--- 2. iTunes, (to confirm ipad works)
--- 3. 3utools to also confirm ipad works and connects properly
+-- 1. Install git for windows (preferably git portable, or using winget but any git will do)
+-- 2. install ipad drivers (bonjour, and ipad drivers = AppleMobileDeviceSupport64.msi)
+-- 3. 3utools to confirm ipad works and connects properly (may have an option to install the required drivers to connect to ipad via USB)
 -- 4. git clone this repo, then go into the ipad2-unlock directly
 -- 5. ensure that once the ipad2 is connected the machine, the 'trust'option is entered on the ipad2 device.
-run unlock2.bat, which will invoke the right command to unlock the ipad2 device.
+run unlock.bat, which will invoke the right command to unlock the ipad2 device.
